@@ -5,10 +5,13 @@ const PORT = process.env.PORT || 3000;
 
 // In-memory storage for todos
 let todos = [
-    { id: 1, title: 'Sample Todo', completed: false },
-    { id: 2, title: 'Another Task', completed: true }
+    { id: 1, title: 'Todo 1', description: 'This is todo 1', completed: false },
+    { id: 2, title: 'Todo 2', description: 'This is todo 2', completed: false },
+    { id: 3, title: 'Todo 3', description: 'This is todo 3', completed: false },
+    { id: 4, title: 'Todo 4', description: 'This is todo 4', completed: false },
+    { id: 5, title: 'Todo 5', description: 'This is todo 5', completed: false }
 ];
-let nextId = 3;
+let nextId = 6;
 
 // Helper to parse JSON body
 const parseBody = (req) => {
@@ -47,7 +50,7 @@ const server = http.createServer(async (req, res) => {
         // GET /todos - Get all todos
         if (path === '/todos' && method === 'GET') {
             res.writeHead(200);
-            res.end(JSON.stringify({ success: true, data: todos }));
+            res.end(JSON.stringify({ todos: todos }));
         }
         
         // GET /todos/:id - Get single todo
@@ -77,6 +80,7 @@ const server = http.createServer(async (req, res) => {
             const newTodo = {
                 id: nextId++,
                 title: body.title,
+                description: body.description || '',
                 completed: body.completed || false
             };
             
@@ -128,7 +132,7 @@ const server = http.createServer(async (req, res) => {
                 endpoints: {
                     'GET /todos': 'Get all todos',
                     'GET /todos/:id': 'Get single todo',
-                    'POST /todos': 'Create todo (body: { title, completed })',
+                    'POST /todos': 'Create todo (body: { title, description, completed })',
                     'PUT /todos/:id': 'Update todo',
                     'DELETE /todos/:id': 'Delete todo'
                 }

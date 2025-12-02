@@ -1,0 +1,23 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000t\u0000e\u0000s\u0000t\u0000_\u0000a\u0000w\u0000s\u0000\r\u0000 \u0000#\u0000 \u0000t\u0000e\u0000s\u0000t\u0000_\u0000a\u0000w\u0000s\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shivanshuk186/test_aws.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shivanshuk186/test_aws/issues"
+  },
+  "homepage": "https://github.com/Shivanshuk186/test_aws#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
